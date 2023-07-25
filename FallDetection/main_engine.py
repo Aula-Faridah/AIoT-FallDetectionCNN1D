@@ -56,8 +56,8 @@ def connect_mqtt():
             logger.info("Failed to connect, return code %d\n", rc)
 
     # client = mqtt_client.Client(client_id)
-    client.username_pw_set("pexpgory:pexpgory",
-                           "k7Yx3pfnEh9cymOWv-ttE2BQgIDS0knt")
+    client.username_pw_set("**********",
+                           "********************************")
     client.on_connect = on_connect
     client.connect(broker, port)
     return client
@@ -174,8 +174,7 @@ def main() -> None:
     # Create the Application and pass it your bot's token.
     job_queue = JobQueue()
     application = Application.builder().token(
-        "5813186812:AAHQnYcuYo-ckBeep4mvMBujqE-p0nVre_k").job_queue(job_queue).build()
-    # application = Application.builder().token("6196565633:AAEkLmQJEOGZYu8xLYCLETkDtGNakYNXRjg").build()
+        "**************************").job_queue(job_queue).build()
 
     subscribe_mqtt(client)
     application.add_handler(CommandHandler("start", start))
